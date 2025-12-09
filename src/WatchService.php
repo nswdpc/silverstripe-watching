@@ -2,7 +2,6 @@
 
 namespace Symbiote\Watch;
 
-use Symbiote\Watch\ItemWatch;
 use SilverStripe\Security\Member;
 use SilverStripe\Security\Security;
 use SilverStripe\ORM\DataObject;
@@ -103,8 +102,8 @@ class WatchService
         $ids = $items->column('WatchedID');
         if (count($ids) !== 0) {
             $list = $type::get()->filter('ID', $ids);
-            if($canViewFilter) {
-                $list = $list->filterByCallback(fn($item) => $item->canView());
+            if ($canViewFilter) {
+                $list = $list->filterByCallback(fn ($item) => $item->canView());
             }
 
             return $list;

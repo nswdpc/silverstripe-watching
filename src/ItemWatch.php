@@ -3,7 +3,6 @@
 namespace Symbiote\Watch;
 
 use SilverStripe\ORM\DataObject;
-use SilverStripe\ORM\DataList;
 use SilverStripe\Security\Member;
 use SilverStripe\Security\Security;
 
