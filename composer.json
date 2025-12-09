@@ -22,7 +22,7 @@
     "require": {
         "silverstripe/framework": "^5",
         "symbiote/silverstripe-apiwrapper": "*",
-        "symbiote/silverstripe-notifications": "*"
+        "symbiote/silverstripe-notifications": "dev-feat-stan"
     },
     "require-dev": {
         "cambis/silverstripe-rector": "^2",
