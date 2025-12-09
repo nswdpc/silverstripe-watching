@@ -21,7 +21,7 @@
     ],
     "require": {
         "silverstripe/framework": "^5",
-        "symbiote/silverstripe-apiwrapper": "*",
+        "symbiote/silverstripe-apiwrapper": "dev-feat-stan",
         "symbiote/silverstripe-notifications": "dev-feat-stan"
     },
     "require-dev": {
@@ -37,7 +37,7 @@
     "repositories": [
         {
             "type": "git",
-            "url": "https://github.com/JamesDPC/silverstripe-apiwrapper.git"
+            "url": "https://github.com/nswdpc/silverstripe-apiwrapper.git"
         },
         {
             "type": "git",
