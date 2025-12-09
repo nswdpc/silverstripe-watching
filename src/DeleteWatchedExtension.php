@@ -12,9 +12,11 @@ class DeleteWatchedExtension extends Extension
     {
         if (Versioned::get_stage() === Versioned::DRAFT) {
             // find all items being watched
+            /** @var \SilverStripe\ORM\DataObject $owner */
+            $owner = $this->getOwner();
             $watches = ItemWatch::get()->filter([
-                "WatchedClass" => $this->getOwner()::class,
-                "WatchedID" => $this->getOwner()->ID,
+                "WatchedClass" => $owner::class,
+                "WatchedID" => $owner->ID,
             ]);
             try {
                 foreach ($watches as $watch) {
