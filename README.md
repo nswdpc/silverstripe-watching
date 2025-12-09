@@ -1,19 +1,20 @@
-# SilverStripe Watching
+# Silverstripe Watching
 
 Adds content watching to your site
 
 ## Composer Install
 
-```
-composer require symbiote/silverstripe-watching:~1.0
+> Add this repo's URL first as a repository entry in composer.json
+
+```sh
+composer require symbiote/silverstripe-watching
 ```
 
 ## Requirements
 
-* SilverStripe 4.1+
+* Silverstripe 5+
 
 ## Documentation
-
 
 ### Use with the silverstripe-notifications module
 
