@@ -9,6 +9,13 @@ use SilverStripe\Security\Security;
 
 /**
  * @author marcus
+ * @property string $Title
+ * @property ?string $Type
+ * @property ?string $WatchData
+ * @property int $WatchedID
+ * @property int $OwnerID
+ * @method \SilverStripe\ORM\DataObject Watched()
+ * @method \SilverStripe\Security\Member Owner()
  */
 class ItemWatch extends DataObject
 {
@@ -38,7 +45,7 @@ class ItemWatch extends DataObject
 
     public function watch(DataObject $item, string $type = 'watch', ?Member $member = null): ?ItemWatch
     {
-        if (!$member) {
+        if (!$member instanceof \SilverStripe\Security\Member) {
             $member = Security::getCurrentUser();
         }
 
@@ -66,6 +73,7 @@ class ItemWatch extends DataObject
         return $this;
     }
 
+    #[\Override]
     public function summaryFields(): array
     {
         $fields = parent::summaryFields();

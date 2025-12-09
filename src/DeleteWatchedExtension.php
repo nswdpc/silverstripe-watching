@@ -6,6 +6,9 @@ use Exception;
 use SilverStripe\Core\Extension;
 use SilverStripe\Versioned\Versioned;
 
+/**
+ * @extends \SilverStripe\Core\Extension<static>
+ */
 class DeleteWatchedExtension extends Extension
 {
     public function onAfterDelete(): void

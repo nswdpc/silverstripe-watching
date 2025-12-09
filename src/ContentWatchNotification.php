@@ -6,6 +6,9 @@ use SilverStripe\ORM\DataExtension;
 use SilverStripe\Core\Config\Config;
 use Symbiote\Notifications\Service\NotificationService;
 
+/**
+ * @extends \SilverStripe\ORM\DataExtension<static>
+ */
 class ContentWatchNotification extends DataExtension
 {
     private static array $watch_types = [

@@ -106,6 +106,7 @@ class WatchService
             if($canViewFilter) {
                 $list = $list->filterByCallback(fn($item) => $item->canView());
             }
+
             return $list;
         } else {
             return null;
@@ -138,7 +139,7 @@ class WatchService
     public function mostWatchedItems(array $filterBy = [], int $number = 10): ArrayList
     {
         $list = ItemWatch::get();
-        if (count($filterBy) !== 0) {
+        if ($filterBy !== []) {
             $list = $list->filter($filterBy);
         }
 
