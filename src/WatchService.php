@@ -5,7 +5,7 @@ namespace Symbiote\Watch;
 use SilverStripe\Security\Member;
 use SilverStripe\Security\Security;
 use SilverStripe\ORM\DataObject;
-use SilverStripe\ORM\ArrayList;
+use SilverStripe\Model\List\ArrayList;
 use SilverStripe\ORM\DataList;
 
 /**

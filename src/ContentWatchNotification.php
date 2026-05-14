@@ -2,14 +2,14 @@
 
 namespace Symbiote\Watch;
 
-use SilverStripe\ORM\DataExtension;
+use SilverStripe\Core\Extension;
 use SilverStripe\Core\Config\Config;
 use Symbiote\Notifications\Service\NotificationService;
 
 /**
- * @extends \SilverStripe\ORM\DataExtension<static>
+ * @extends \SilverStripe\Core\Extension<static>
  */
-class ContentWatchNotification extends DataExtension
+class ContentWatchNotification extends Extension
 {
     private static array $watch_types = [
         \Page::class => 'watch',
