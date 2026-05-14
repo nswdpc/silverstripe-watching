@@ -6,6 +6,9 @@ use SilverStripe\ORM\DataExtension;
 use SilverStripe\Core\Config\Config;
 use Symbiote\Notifications\Service\NotificationService;
 
+/**
+ * @extends \SilverStripe\ORM\DataExtension<static>
+ */
 class ContentWatchNotification extends DataExtension
 {
     private static array $watch_types = [
@@ -25,9 +28,12 @@ class ContentWatchNotification extends DataExtension
     public function onAfterPublish(): void
     {
         if ($this->notificationService) {
+
+            /** @var \SilverStripe\ORM\DataObject $owner */
+            $owner = $this->getOwner();
             $this->notificationService->notify(
                 'CONTENT_PUBLISHED',
-                $this->getOwner()
+                $owner
             );
 
             // TODO clarity on what getSectionPage returns, could be dead code
@@ -53,7 +59,9 @@ class ContentWatchNotification extends DataExtension
     public function getRecipients($identifier): array
     {
         if ($this->watchService) {
-            return $this->watchService->watchersOf($this->getOwner(), $this->getWatchType());
+            /** @var \SilverStripe\ORM\DataObject $owner */
+            $owner = $this->getOwner();
+            return $this->watchService->watchersOf($owner, $this->getWatchType());
         }
 
         return [];
